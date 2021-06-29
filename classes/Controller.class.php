@@ -4,13 +4,13 @@ require_once ("dbh.class.php");
 class Controller extends Dbh {
 
     public function url_root($flink) {
-		return "http://localhost/ikraam/". $flink;
+		return "http://localhost/foldername/". $flink;
 	}
      public function __construct(){
         
         if (substr($_SERVER['REQUEST_URI'], -4) == '.php' or stripos($_SERVER['REQUEST_URI'], '.php') == true) {
 			//self::_redirect('404');
-			//header("Location: http://localhost/ikraam/error-404.html");
+			//header("Location: http://localhost/foldername/error-404.html");
             $link ="error-404.html";
             header('Location: '.self::url_root($link));
             exit();
